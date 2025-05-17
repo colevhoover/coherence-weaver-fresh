@@ -1,0 +1,20 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "debug": false
+  },
+  "api": {
+    "genai_model": "gemini-2.0-flash",
+    "timeout": 30
+  },
+  "a2a": {
+    "protocol_version": "0.1",
+    "coordination_strategy": "centralized"
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "logs/coherence_weaver.log",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "data_analyst_agent",
+    "name": "Data Analyst Agent",
+    "description": "Specialized in data cleaning, statistical analysis, and pattern identification.",
+    "url": "http://localhost:8001/a2a",
+    "capabilities": [
+      "data_cleaning",
+      "statistical_analysis",
+      "pattern_identification",
+      "data_transformation"
+    ]
+  },
+  {
+    "id": "visualization_agent",
+    "name": "Visualization Agent",
+    "description": "Specialized in creating interactive data visualizations and dashboards.",
+    "url": "http://localhost:8002/a2a",
+    "capabilities": [
+      "chart_generation",
+      "dashboard_creation",
+      "interactive_visualizations",
+      "data_storytelling"
+    ]
+  },
+  {
+    "id": "climate_expert_agent",
+    "name": "Climate Expert Agent",
+    "description": "Specialized in climate science, meteorological data analysis, and environmental patterns.",
+    "url": "http://localhost:8003/a2a",
+    "capabilities": [
+      "climate_modeling",
+      "meteorological_analysis",
+      "environmental_pattern_recognition",
+      "climate_forecasting"
+    ]
+  }
+]

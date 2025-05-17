@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "name": "coherence-weaver",
+  "display_name": "Coherence Weaver",
+  "description": "A specialized agent for coordinating interactions between multiple AI agents, identifying patterns, and building trust-based collaborative relationships that align with justice-oriented principles.",
+  "capabilities": [
+    {
+      "name": "multi_agent_coordination",
+      "description": "Coordinate complex tasks across multiple AI agents"
+    },
+    {
+      "name": "pattern_recognition",
+      "description": "Identify recurring patterns across different agent interactions"
+    },
+    {
+      "name": "trust_building",
+      "description": "Develop trust-based collaborative relationships between agents"
+    },
+    {
+      "name": "justice_alignment",
+      "description": "Ensure collaborations align with decolonized, justice-oriented principles"
+    }
+  ],
+  "contact_info": {
+    "email": "your-email@example.com"
+  },
+  "api": {
+    "url": "http://localhost:8000/a2a",
+    "auth": {
+      "type": "bearer_token"
+    }
+  }
+}

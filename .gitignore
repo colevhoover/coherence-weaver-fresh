@@ -1,0 +1,48 @@
+# Python virtual environment
+coherence_weaver_env/
+venv/
+env/
+ENV/
+
+# Environment variables
+.env
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# OS specific files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Local configuration
+instance/
+.webassets-cache
+
+# Database
+*.sqlite
+*.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Security scripts with tokens
+*token*_push.sh
+force_push.sh
+*github_upload.sh

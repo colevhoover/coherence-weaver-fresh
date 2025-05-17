@@ -1,0 +1,43 @@
+# Manual GitHub Push Commands
+
+These are the exact commands to run in your terminal to push your project to GitHub.
+Run these commands one by one from inside the coherence_weaver directory.
+
+## Step 1: Navigate to coherence_weaver directory
+cd /Users/colehoover/Documents/Cline/Svalbard\ 1/Svalbard/coherence_weaver
+
+## Step 2: Initialize Git (Skip if already done)
+git init
+
+## Step 3: Setup Git identity
+git config user.name "Cole Hoover"
+git config user.email "colevhoover@gmail.com"
+
+## Step 4: Add all files to Git
+git add .
+
+## Step 5: Commit the files
+git commit -m "Initial commit: Complete Coherence Weaver project"
+
+## Step 6: Set up main branch
+git branch -M main
+
+## Step 7: Add remote with token-based authentication
+git remote add origin https://colevhoover:<GITHUB_TOKEN>@github.com/colevhoover/coherenceweaver.git
+
+## Step 8: Push to GitHub
+git push -u origin main
+
+## Step 9: If Step 8 fails, try force push
+git push -f -u origin main
+
+## Step 10: Check your GitHub repository
+# Visit https://github.com/colevhoover/coherenceweaver to verify
+
+## Step 11: Clean up (for security)
+# After successful push, remove token from remote URL
+git remote remove origin
+git remote add origin https://github.com/colevhoover/coherenceweaver.git
+
+# Delete this file for security
+rm manual_commands.txt

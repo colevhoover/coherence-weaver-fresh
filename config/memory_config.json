@@ -1,0 +1,19 @@
+{
+  "memory": {
+    "type": "in_memory",
+    "alternatives": {
+      "vertex_ai": {
+        "corpus_name": "projects/your-project-id/locations/global/ragCorpora/agent-relationships",
+        "similarity_top_k": 7
+      }
+    }
+  },
+  "session": {
+    "type": "in_memory",
+    "alternatives": {
+      "database": {
+        "db_url": "sqlite:///./data/coherence_weaver.db"
+      }
+    }
+  }
+}
