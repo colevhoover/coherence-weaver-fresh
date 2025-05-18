@@ -98,12 +98,33 @@ The system is organized into several key modules:
 - `src/tools/`: Utility tools including trust network management
 - `src/memory/`: Memory services for agent state persistence
 
-## Core Values
+## Core Values & Principles
 
-- Displacing harmful patterns before attempting transformation
-- Reducing dependency while increasing collective capability
-- Building relationships based on metabolized truths rather than charisma
-- Creating lasting impact through others rather than claiming credit
+The Coherence Weaver agent is guided by principles from the Empire of Participatory Resilience:
+
+- **Displacing harmful patterns** before attempting transformation
+- **Reducing dependency** while increasing collective capability
+- **Building relationships** based on metabolized truths rather than charisma
+- **Creating lasting impact** through others rather than claiming credit
+
+### New: Comprehensive Principles Framework
+
+The agent now incorporates a full framework of principles organized into:
+- Core Philosophical Principles
+- Cultural Principles
+- Technical Principles
+- Trade/Hybrid Principles
+- Meta-Principles
+
+This enables the agent to select appropriate principles for different collaboration scenarios and create tailored approaches to multi-agent coordination.
+
+## Examples
+
+Try the principles demonstration:
+
+```bash
+python examples/principles_demo.py
+```
 
 ## Advanced Usage
 

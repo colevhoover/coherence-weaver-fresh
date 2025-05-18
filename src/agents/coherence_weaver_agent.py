@@ -14,6 +14,7 @@ from ..models.agent_models import (
     A2ARequest, A2AResponse, TaskAssignment, TaskResult, TaskStatus
 )
 from ..utils.logging_utils import get_logger
+from ..principles.participatory_resilience import ALL_PRINCIPLES, META_PRINCIPLES, get_principle, get_principles_by_domain, get_related_principles
 
 # Initialize logging
 logger = get_logger("coherence_weaver_agent")
@@ -131,6 +132,30 @@ class CoherenceWeaverAgent(BaseAgent):
             version=version,
             metadata=metadata
         )
+        
+        # Add principles to the agent's instruction
+        self.principles_instruction = """
+As the Coherence Weaver, you operate according to the principles of the Empire of Participatory Resilience:
+
+Core Philosophical Tenets:
+- Shared Power Paradigm: Distribute decision-making across all participating agents
+- Community Wisdom: Value collective intelligence over individual expertise
+- Embracing Failure: Treat failures as valuable learning opportunities
+- Proximity to Reality: Ground decisions in real-world contexts
+- Relationships Over Blueprints: Prioritize relationship quality over rigid processes
+
+You approach multi-agent coordination by:
+1. Displacing harmful patterns before attempting transformation
+2. Reducing dependency while increasing collective capability
+3. Building relationships based on metabolized truths rather than charisma
+4. Creating lasting impact through others rather than claiming credit
+
+When faced with complex decisions, consider which principles are most relevant and
+how they might be applied to create justice-aligned outcomes that benefit all participants.
+"""
+
+        # Update the full instruction
+        self.instruction = self.instruction + "\n\n" + self.principles_instruction
         
         # Initialize agent registry and task tracking
         self.registered_agents: Dict[str, Dict[str, Any]] = {}
@@ -529,6 +554,43 @@ class CoherenceWeaverAgent(BaseAgent):
             "status": "success",
             "message": f"Agent group {name} created successfully",
             "group_id": group_id
+        }
+    
+    def apply_principles_to_task(self, task_description, available_agents=None):
+        """
+        Apply relevant principles to a given task or collaboration scenario.
+        
+        Args:
+            task_description: String describing the task to be performed
+            available_agents: List of agent IDs that could participate
+            
+        Returns:
+            Dictionary with recommended approach based on relevant principles
+        """
+        # Find relevant principles based on keywords in the task description
+        relevant_principles = {}
+        
+        # Simple keyword matching to find relevant principles
+        keywords = task_description.lower().split()
+        for name, principle in ALL_PRINCIPLES.items():
+            principle_keywords = (principle["description"] + " " + principle["effect"]).lower().split()
+            if any(keyword in principle_keywords for keyword in keywords):
+                relevant_principles[name] = principle
+        
+        # If we found fewer than 3 principles, add some meta-principles
+        if len(relevant_principles) < 3:
+            for name, principle in META_PRINCIPLES.items():
+                if len(relevant_principles) >= 5:  # Limit to 5 total principles
+                    break
+                if name not in relevant_principles:
+                    relevant_principles[name] = principle
+        
+        # Create a recommendation based on the relevant principles
+        return {
+            "task": task_description,
+            "relevant_principles": relevant_principles,
+            "recommended_approach": f"Apply {list(relevant_principles.keys())} principles to this task",
+            "available_agents": available_agents or []
         }
     
     def process_a2a_request(self, request: A2ARequest) -> A2AResponse:
